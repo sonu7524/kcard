@@ -15,7 +15,7 @@ function App() {
       const formData = new FormData();
       formData.append('file', file);
 
-      await axios.post('http://127.0.0.1:5000/update_data', formData, {
+      await axios.post('https://stats-flag.onrender.com/update_data', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -30,7 +30,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/get_flags');
+      const response = await axios.get('https://stats-flag.onrender.com/get_flags');
       console.log(response.data);
       setFlags(response.data);
     } catch (error) {
